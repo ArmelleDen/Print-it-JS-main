@@ -80,14 +80,19 @@ function showDots()
 		const dots = document.querySelector('.dots');
 		for (let j = 0; j < numberOfSlide; j++) 
 		{
+			/* on crée balise span  */
 			const dot = document.createElement('span');
+			/* on ajoute un id pour chaque élément, ex:span1  */
 			dot.id='span' + j;
    			dot.addEventListener('click', function(event) 
 				{ 
+				/* on supprime le text span de l'id pour récupérer l'index de l'élément */
 				i = Number(event.target.id.replace('span', ''));
 	 			slideTo();
 				});
+			/* on ajoute une class dot  */
 			dot.classList.add('dot');
+			/* insert les span créés dans la div dot */
 			dots.appendChild(dot);
 			/* initialisation qd on lance la page */
 			if (j == 0) 
